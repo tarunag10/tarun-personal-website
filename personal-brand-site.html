@@ -339,6 +339,25 @@
   .wf-excerpt { font-size: 13px; color: var(--text-2); line-height: 1.72; max-width: 640px; margin-bottom: 14px; }
   .wf-tags { display: flex; gap: 5px; flex-wrap: wrap; }
 
+  /* ARTICLE DETAIL VIEW */
+  #article-detail { max-width: 720px; margin: 0 auto; padding: 48px 0 96px; }
+  .article-back { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--text-2); font-size: 12.5px; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: all 0.2s; margin-bottom: 36px; }
+  .article-back:hover { border-color: var(--border-h); color: var(--text); }
+  .article-header .wf-cat { margin-bottom: 10px; }
+  .article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,4vw,40px); font-weight: 400; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+  .article-header .article-meta { font-size: 12px; color: var(--text-3); margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--text); margin: 36px 0 14px; }
+  .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--text); margin: 28px 0 10px; }
+  .article-body p { font-size: 14.5px; color: var(--text-2); line-height: 1.8; margin-bottom: 16px; }
+  .article-body ul, .article-body ol { font-size: 14.5px; color: var(--text-2); line-height: 1.8; margin: 0 0 16px 22px; }
+  .article-body li { margin-bottom: 6px; }
+  .article-body blockquote { border-left: 2px solid var(--gold); padding: 12px 20px; margin: 20px 0; background: var(--gold-glow); border-radius: 0 var(--radius) var(--radius) 0; }
+  .article-body blockquote p { color: var(--text-2); font-size: 13.5px; font-style: italic; margin-bottom: 0; }
+  .article-body strong { color: var(--text); font-weight: 500; }
+  .article-body em { font-style: italic; }
+  .article-body hr { border: none; height: 1px; background: var(--border); margin: 32px 0; }
+  .article-disclaimer { font-size: 12.5px; color: var(--text-3); font-style: italic; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+
   /* ═══════════════════════════════════════
      ABOUT PAGE
   ═══════════════════════════════════════ */
@@ -1097,7 +1116,7 @@
 
     <div class="wf-list fade-up d2" id="writing-list">
 
-      <div class="wf-item" data-wcat="legal-tech ai">
+      <div class="wf-item" data-wcat="legal-tech ai" onclick="showArticle('ats-screening')">
         <div class="wf-head">
           <div><div class="wf-cat">Legal Tech · AI</div><div class="wf-title">How Automated ATS Screening Creates Legal Exposure for Law Firms</div></div>
           <div class="wf-meta"><div>Jan 2025</div><div>12 min</div></div>
@@ -1106,7 +1125,7 @@
         <div class="wf-tags"><span class="pill pill-gold">GDPR</span><span class="pill">Article 22</span><span class="pill">ATS</span></div>
       </div>
 
-      <div class="wf-item" data-wcat="law research">
+      <div class="wf-item" data-wcat="law research" onclick="showArticle('seat-venue')">
         <div class="wf-head">
           <div><div class="wf-cat">Arbitration · India</div><div class="wf-title">The Seat-Venue Confusion in Indian Arbitration: A Practical Map</div></div>
           <div class="wf-meta"><div>Oct 2024</div><div>18 min</div></div>
@@ -1115,7 +1134,7 @@
         <div class="wf-tags"><span class="pill">BALCO</span><span class="pill">Indian Arbitration</span><span class="pill pill-gold">Published</span></div>
       </div>
 
-      <div class="wf-item" data-wcat="product legal-tech">
+      <div class="wf-item" data-wcat="product legal-tech" onclick="showArticle('lexscope-atlas')">
         <div class="wf-head">
           <div><div class="wf-cat">Product · Legal Tech</div><div class="wf-title">Building LexScope Atlas: What Shipping a Regulatory Triage Tool Taught Me</div></div>
           <div class="wf-meta"><div>Mar 2025</div><div>10 min</div></div>
@@ -1124,7 +1143,7 @@
         <div class="wf-tags"><span class="pill">LexScope</span><span class="pill">RegTech</span><span class="pill">Product Design</span></div>
       </div>
 
-      <div class="wf-item" data-wcat="ai">
+      <div class="wf-item" data-wcat="ai" onclick="showArticle('legal-search')">
         <div class="wf-head">
           <div><div class="wf-cat">AI · Search</div><div class="wf-title">Why Legal Search Is a Different Problem Than Enterprise Search</div></div>
           <div class="wf-meta"><div>Aug 2024</div><div>14 min</div></div>
@@ -1133,7 +1152,7 @@
         <div class="wf-tags"><span class="pill">RAG</span><span class="pill">Legal AI</span><span class="pill">Search Systems</span></div>
       </div>
 
-      <div class="wf-item" data-wcat="law legal-tech">
+      <div class="wf-item" data-wcat="law legal-tech" onclick="showArticle('article-22')">
         <div class="wf-head">
           <div><div class="wf-cat">Data Law · GDPR</div><div class="wf-title">Filing Article 22 Requests: What Actually Happens When You Send One</div></div>
           <div class="wf-meta"><div>Jun 2024</div><div>8 min</div></div>
@@ -1142,7 +1161,7 @@
         <div class="wf-tags"><span class="pill pill-gold">GDPR</span><span class="pill">Data Rights</span><span class="pill">Recruitment</span></div>
       </div>
 
-      <div class="wf-item" data-wcat="product research">
+      <div class="wf-item" data-wcat="product research" onclick="showArticle('shipping-15')">
         <div class="wf-head">
           <div><div class="wf-cat">Product · Indie Building</div><div class="wf-title">Shipping 15 Products in a Year While Working as a Lawyer</div></div>
           <div class="wf-meta"><div>Feb 2025</div><div>9 min</div></div>
@@ -1152,6 +1171,213 @@
       </div>
 
     </div>
+
+    <!-- ARTICLE DETAIL VIEW -->
+    <div id="article-detail" style="display:none">
+      <button class="article-back" onclick="backToWriting()">&larr; Back to Writing</button>
+      <div class="article-header">
+        <div class="wf-cat" id="article-cat"></div>
+        <h1 id="article-title"></h1>
+        <div class="article-meta" id="article-meta"></div>
+      </div>
+      <div class="article-body" id="article-body"></div>
+    </div>
+
+    <!-- HIDDEN ARTICLE CONTENT -->
+    <div class="article-content" id="article-ats-screening" style="display:none" data-cat="Legal Tech · AI" data-title="How Automated ATS Screening Creates Legal Exposure for Law Firms" data-meta="January 2025 · 12 min read">
+      <p>When firms deploy AI to screen applicants without meaningful human review, they may be triggering data subject rights under GDPR Article 22 that most firms have not prepared for.</p>
+      <hr>
+      <h2>The Problem Nobody Is Talking About</h2>
+      <p>Every major law firm now uses an applicant tracking system. Most of those systems include some form of automated scoring — ranking CVs by keyword match, flagging candidates by education institution, or filtering by GPA thresholds. In many implementations, no human reviews a rejected application before it is binned.</p>
+      <p>This is efficient. It is also, in a significant number of cases, a GDPR Article 22 compliance failure.</p>
+      <p>Article 22 of the UK GDPR and EU GDPR gives data subjects the right not to be subject to a decision based <strong>solely on automated processing</strong> that produces a <strong>legal or similarly significant effect</strong>. Rejection from a job application almost certainly qualifies as a similarly significant effect. And if no human meaningfully reviews the output before acting on it, the processing is solely automated.</p>
+      <h2>What Article 22 Actually Requires</h2>
+      <p>Where automated decision-making falls within Article 22, the controller must either obtain explicit consent, show it is necessary for a contract, or rely on a Union or Member State law authorisation. In the employment context, most firms rely on the "necessary for a contract" basis — but this is narrower than it looks.</p>
+      <p>Even where a lawful basis exists, three additional obligations attach:</p>
+      <ul>
+        <li>The data subject must be informed that automated decision-making is taking place.</li>
+        <li>They must be given meaningful information about the logic involved.</li>
+        <li>They must have the right to obtain human review, to express their point of view, and to contest the decision.</li>
+      </ul>
+      <p>Most law firm privacy notices say nothing about automated CV screening. The candidate has no idea an algorithm rejected them before a single human read their application. The right to contest? Non-existent in practice.</p>
+      <h2>The "Meaningful Human Involvement" Question</h2>
+      <p>Firms often defend their process by pointing to a recruiter who reviews a shortlist. But there is a problem: if the shortlist itself was generated by automated scoring, and the recruiter only ever sees candidates the algorithm approved, human review of rejected candidates is effectively zero.</p>
+      <p>The UK ICO guidance is clear that human involvement must be <strong>meaningful</strong> — not rubber-stamping. A human who sees only approved candidates and clicks confirm does not provide meaningful oversight of the rejection decision.</p>
+      <blockquote><p>The operative question is not whether a human touched the process at all. It is whether a human meaningfully reviewed the automated output before a decision adversely affecting the data subject was made.</p></blockquote>
+      <h2>What a Defensible Process Looks Like</h2>
+      <p>Firms that want to use automated screening lawfully need to address several things simultaneously.</p>
+      <p><strong>Transparency.</strong> Privacy notices must disclose that automated processing occurs, what criteria the system uses, and what the consequences are. Generic boilerplate about "automated processing" does not meet the specificity the law requires.</p>
+      <p><strong>Human review.</strong> If the firm is relying on the Article 22(2)(b) "necessary for a contract" exemption, it must ensure a human genuinely reviews decisions — not just the shortlist, but the rejection decisions too, at least by sample.</p>
+      <p><strong>Right to contest.</strong> There must be a real mechanism for candidates to request human reconsideration. This needs to be communicated proactively, not buried in a privacy notice.</p>
+      <p><strong>Bias assessment.</strong> Automated systems trained on historical hiring data replicate historical biases. Firms should be conducting periodic impact assessments on their screening criteria.</p>
+      <h2>The Article 22 Request as a Tool</h2>
+      <p>One practical consequence of this gap: candidates who suspect they were screened out by an algorithm can and increasingly do file Article 22 requests. The responses are revealing — firms often confirm automated screening took place while claiming no legal obligation attached, without engaging with whether the effect was "similarly significant."</p>
+      <p>The ICO has enforcement powers here. And as AI-assisted screening becomes more sophisticated, the exposure only grows. Firms that have not reviewed their ATS compliance in the last two years are almost certainly running a process that does not meet the standard.</p>
+      <h2>What to Do Now</h2>
+      <p><strong>For law firms:</strong> audit your ATS configuration. Understand exactly what automated decisions it makes, what criteria it applies, and at what point human review enters the process. Update your privacy notice to reflect reality. Build a right-to-contest mechanism that actually works.</p>
+      <p><strong>For candidates:</strong> if you were rejected at the application stage without any apparent human review, you have the right to ask. Request confirmation of whether automated processing was used, what logic was applied, and ask for human reconsideration. You do not need a lawyer to send this request.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
+    <div class="article-content" id="article-seat-venue" style="display:none" data-cat="Arbitration · India" data-title="The Seat-Venue Confusion in Indian Arbitration: A Practical Map" data-meta="October 2024 · 18 min read">
+      <p>A decade after Bharat Aluminium, the distinction between seat and venue in Indian arbitration remains one of the most reliably litigated questions in commercial practice. Here is why, and how to draft around it.</p>
+      <hr>
+      <h2>Why This Still Matters</h2>
+      <p>The seat of an arbitration determines which court has supervisory jurisdiction over the proceedings and, crucially, which national law governs the arbitration agreement itself. The venue is simply the physical location where hearings take place — a logistical choice with no jurisdictional consequence.</p>
+      <p>This distinction has been settled law in most major arbitration jurisdictions for decades. In India, it has been contested, reversed, and relitigated to the Supreme Court multiple times. The result is a body of case law that is broadly correct in outcome but chaotic in reasoning, and commercial contracts that routinely create ambiguity where they should create certainty.</p>
+      <h2>BALCO and What It Settled</h2>
+      <p><em>Bharat Aluminium Co v Kaiser Aluminium Technical Services</em> (2012) was supposed to resolve this. The Supreme Court's five-judge bench held that Part I of the Arbitration and Conciliation Act 1996 — which governs domestic arbitrations and India-seated international ones — does not apply to arbitrations seated outside India. Courts in the seat have supervisory jurisdiction. Foreign awards are enforced under Part II.</p>
+      <p>What BALCO did not resolve cleanly was how to determine the seat when the contract designates a physical location without using the word "seat." This left open the question that has generated the most subsequent litigation: when a contract says "arbitration in Delhi" or "venue shall be Mumbai," does that designate a seat or merely a physical location?</p>
+      <h2>The Indus Mobile Problem</h2>
+      <p><em>Indus Mobile Distribution v Datawind Innovations</em> (2017) created a significant divergence. The Supreme Court held that where parties designate a specific seat, that court has exclusive jurisdiction — excluding all other courts, including those at the place where the cause of action arose. This was largely welcome.</p>
+      <p>But the reasoning in Indus Mobile — and several High Court decisions that followed it — conflated seat designation with venue designation in ways that generated unpredictable outcomes. A clause saying "the arbitration shall be conducted in Bengaluru" was read as a seat clause by some courts and a venue clause by others, depending on whether other connecting factors existed.</p>
+      <blockquote><p>The core problem is that Indian courts do not apply a consistent interpretive framework to seat-venue ambiguity. The outcome depends heavily on which High Court is seized of the matter and how much connecting factor analysis the bench is willing to undertake.</p></blockquote>
+      <h2>BGS SGS SOMA and the Current Position</h2>
+      <p><em>BGS SGS SOMA JV v NHPC Ltd</em> (2019) brought some clarity. The Supreme Court held that where a contract specifies a seat, that designation confers exclusive jurisdiction on courts at the seat regardless of where the cause of action arose. The "place of arbitration" in Section 20 of the Act can designate a seat. And a clear seat designation in the arbitration clause supersedes any earlier exclusive jurisdiction clause in favour of a different court.</p>
+      <p>The difficulty is that BGS was addressing a scenario where the clause was relatively clear. Many commercial contracts are not. They specify a physical city for hearings, include a broad governing law clause, and add an exclusive jurisdiction clause pointing to a third court. Untangling this triangle has produced conflicting High Court decisions that BGS did not fully resolve.</p>
+      <h2>Practical Drafting Guidance</h2>
+      <p>The lesson from the case law is that drafting ambiguity costs far more than the time it takes to draft clearly. Clauses that generate this litigation typically share three features:</p>
+      <ul>
+        <li>They use "venue" and "seat" interchangeably, or use neither.</li>
+        <li>They specify a city for hearings without specifying whether that designation is jurisdictional.</li>
+        <li>They include a separate exclusive jurisdiction clause pointing to a different court.</li>
+      </ul>
+      <p>A well-drafted arbitration clause for Indian-seated arbitrations should do the following:</p>
+      <p><strong>Use the word "seat" explicitly.</strong> "The seat of the arbitration shall be [city]" is unambiguous. "The arbitration shall be conducted in [city]" is not. Use the first form.</p>
+      <p><strong>State the supervisory jurisdiction consequence.</strong> "The courts of [city] shall have exclusive supervisory jurisdiction over the arbitration." This is redundant once the seat is properly designated, but it eliminates any argument about intent.</p>
+      <p><strong>Address venue separately if needed.</strong> "Hearings may be conducted at such venue as the parties may agree, or as the tribunal may direct." This permits logistical flexibility without creating jurisdictional ambiguity.</p>
+      <p><strong>Remove conflicting jurisdiction clauses.</strong> If the arbitration clause designates Mumbai as the seat, a separate clause giving Delhi courts exclusive jurisdiction over disputes is an invitation to litigation. Delete one or the other.</p>
+      <h2>International Counterparty Considerations</h2>
+      <p>Where one party is non-Indian and the contract has international connecting factors, additional considerations apply. The choice of India as a seat for an international commercial arbitration governed by Part I of the Act should be explicit, and the applicable institutional rules should be specified. Ad hoc arbitrations seated in India with international parties have generated a particularly dense body of conflicting case law on Part I applicability.</p>
+      <p>For genuinely international contracts, parties routinely prefer seats outside India — Singapore, London, Dubai — specifically to avoid Indian court supervisory jurisdiction. This is a legitimate commercial choice. But if India is the chosen seat, clarity in drafting is not optional.</p>
+      <h2>The Takeaway</h2>
+      <p>The seat-venue distinction in Indian arbitration is settled in theory and contested in practice. The case law is broadly convergent but the path to that convergence has been expensive for the parties who funded the litigation. The cost of a clear clause is two sentences. The cost of an ambiguous one is a multi-year dispute about jurisdiction before the underlying claim is even argued.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
+    <div class="article-content" id="article-lexscope-atlas" style="display:none" data-cat="Product · Legal Tech" data-title="Building LexScope Atlas: What Shipping a Regulatory Triage Tool Taught Me" data-meta="March 2025 · 10 min read">
+      <p>The hardest decisions in LexScope Atlas were not technical. They were about how much to trust the user, how much to hard-code, and when a confidence score becomes more dangerous than no score at all.</p>
+      <hr>
+      <h2>What LexScope Atlas Does</h2>
+      <p>LexScope Atlas is a regulatory applicability triage tool. You input a company profile — jurisdiction, industry, size, product type, entity type, revenue, monthly active users — and a date, and it tells you which regulations in a configurable catalog apply to that profile, with a confidence score and a per-dimension explanation of why.</p>
+      <p>The motivation was simple: early-stage and mid-market companies routinely mis-scope their regulatory obligations. A UK-based B2B SaaS company with 15 employees and no EU operations does not have the same GDPR obligations as a consumer-facing platform processing 5 million EU data subjects. But when founders search for compliance guidance, they get the same generic answers regardless of their actual profile.</p>
+      <p>LexScope was an attempt to build something that at least asked the right questions before answering.</p>
+      <h2>The Rule Design Problem</h2>
+      <p>The first real design decision was how to represent regulatory rules in a way that was expressive enough to be useful but simple enough to be maintainable by a non-developer.</p>
+      <p>The initial instinct was to use a structured JSON schema with nested conditions. This worked, but it produced rules that were opaque — a compliance professional who wanted to add a regulation to the catalog had to understand the schema to do so. That defeated much of the purpose.</p>
+      <p>The solution was a layered approach: a seed catalog of hard-coded base rules, an auto-import layer for programmatically generated rules, and a local admin import that accepted a simplified JSON or CSV format. The admin layer did most of the translation work internally, converting user-friendly inputs into the engine's native rule format.</p>
+      <blockquote><p>The lesson: the interface that matters most is not the one users see. It is the one through which your data enters the system. If that interface is hard to use, your data will be wrong.</p></blockquote>
+      <h2>Version-Aware Evaluation and Time Travel</h2>
+      <p>Regulations change. GDPR has been amended. The UK GDPR diverged from EU GDPR post-Brexit. Thresholds shift. New rules are added. An applicability tool that gives you the current state of a regulation is only useful if you are always asking about right now.</p>
+      <p>The time-travel feature — evaluating applicability "as of" a specific date — required the rule structure to support versioning. Each regulation in the catalog can have multiple versions, each with its own effective date and optional repeal date. The engine selects the version active on the requested date before running the evaluation.</p>
+      <p>This sounds straightforward but produced several edge cases. What happens when a regulation is repealed and replaced by a successor? What about transitional provisions? The current implementation handles the common cases but acknowledges the hard ones by flagging uncertainty rather than suppressing it.</p>
+      <h2>Confidence Scores: Useful or Dangerous?</h2>
+      <p>The confidence score feature was the most contentious design decision. The idea was that a binary "applicable / not applicable" output was too crude — real regulatory analysis always involves uncertainty, and showing that uncertainty is more honest than hiding it.</p>
+      <p>The risk is that a 73% confidence score on a GDPR applicability determination looks authoritative. A non-lawyer reading it might treat it as a reliable probability. It is not — it is a heuristic based on how many of the assessment dimensions matched, weighted by their relative importance in the rule definition.</p>
+      <p>The mitigation was threefold. First, a persistent disclaimer that the tool is "scope triage only" and not legal advice. Second, the per-dimension explainability display, which shows exactly which factors contributed to the score so the user can see the reasoning rather than just the number. Third, the export formats — JSON and CSV — which are designed for use by practitioners who will apply judgment to the output, not by end users making decisions based on it alone.</p>
+      <h2>What I Would Do Differently</h2>
+      <p>The catalog seeding process was underestimated. Writing accurate rule definitions for 30+ regulations across multiple jurisdictions took longer than building the engine. Each rule required research into the actual statutory text, threshold values, and exemption conditions. Some of that research is still being corrected in subsequent updates.</p>
+      <p>A better approach would have been to launch with five well-researched rules and iterate, rather than shipping thirty rules at varying quality levels. The user sees thirty rules and assumes they are all equally reliable. They are not.</p>
+      <p>The other thing I would do differently is the mobile experience. The tool was designed desktop-first because the expected user was a compliance professional working at a screen. The form is dense. The results panel is wide. On mobile it degrades. That was a deliberate trade-off at the time; in retrospect it was the wrong one.</p>
+      <h2>What It Taught Me About Legal Product Design</h2>
+      <p>The hardest part of building a legal tool is not the legal knowledge or the engineering. It is calibrating how much authority to grant the output. Legal professionals are trained to distrust outputs they cannot fully audit. Non-legal users are inclined to over-trust them.</p>
+      <p>Every design decision in LexScope — the confidence scores, the dimension breakdowns, the disclaimer text, the export formats — was an attempt to navigate that calibration. The tool should be useful enough to justify using, humble enough to prevent over-reliance, and transparent enough that a qualified professional can check the reasoning. Whether it got that balance right is something I am still learning from the usage data.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
+    <div class="article-content" id="article-legal-search" style="display:none" data-cat="AI · Search" data-title="Why Legal Search Is a Different Problem Than Enterprise Search" data-meta="August 2024 · 14 min read">
+      <p>Generic RAG pipelines fail legal search not because the technology is wrong, but because the problem specification is wrong. Legal search has properties that require different architecture from the ground up.</p>
+      <hr>
+      <h2>The Standard RAG Assumption</h2>
+      <p>Most AI-powered search systems — whether enterprise knowledge bases, document repositories, or research tools — share a core architecture: chunk documents, embed them, store in a vector database, retrieve semantically similar chunks on query, and pass them to a language model for synthesis.</p>
+      <p>This works well for many domains. It works poorly for legal research, and the failures are not random. They cluster around properties of legal text and legal reasoning that are fundamentally different from the documents that enterprise search was designed for.</p>
+      <h2>Property 1: Authority Hierarchy</h2>
+      <p>A statute overrides a regulation. A regulation overrides guidance. A Supreme Court decision binds lower courts. A High Court decision does not bind another High Court but has persuasive weight. A 2024 judgment that interprets a 1996 statute changes how the 1996 statute should be read, retroactively.</p>
+      <p>Standard vector search has no concept of authority. It retrieves the most semantically similar chunks, which might be a law review article, a government guidance note, and a binding judgment — all with equal weight. A practitioner reading those results would instantly know to weight them differently. The system does not.</p>
+      <p>A legal search system needs a defined authority hierarchy and the ability to filter or weight results by their position in that hierarchy. This is not a nice-to-have; it is the difference between a tool that helps and one that misleads.</p>
+      <h2>Property 2: Temporal Sensitivity</h2>
+      <p>The law is not a static corpus. Statutes are amended. Regulations are repealed. Case law evolves. A provision that was good law in 2019 may have been overruled by 2023. An enterprise knowledge base can usually tolerate documents being a few months out of date. A legal research tool cannot.</p>
+      <p>More subtly: the temporal question in legal search is often not "what is the current law" but "what was the law on date X." Contract disputes, historical compliance assessments, and retrospective due diligence all require the ability to query the state of the law at a past point in time. Standard search systems have no concept of temporal provenance in this sense.</p>
+      <h2>Property 3: Jurisdictional Scope</h2>
+      <p>EU GDPR and UK GDPR are not the same regulation. California CCPA and Virginia CDPA are not the same statute. Indian arbitration law and English arbitration law share terminology but reach different outcomes on the same facts.</p>
+      <p>A legal search system that does not scope results by jurisdiction will surface US case law in response to a UK legal question, or EU guidance in response to a query about Indian law. For users who know the domain, this is noise. For users who do not, it is actively dangerous.</p>
+      <p>Jurisdictional filtering is not simply a metadata tag on documents. Many legal questions are cross-jurisdictional by nature — a contract dispute involving parties from different countries may require simultaneous analysis of multiple legal systems. The system needs to handle both "retrieve only UK sources" and "retrieve sources from all relevant jurisdictions and label them" queries correctly.</p>
+      <blockquote><p>The jurisdictional problem is compounded by the fact that legal text often does not self-identify its jurisdiction clearly. Embedding jurisdiction as document metadata requires editorial work at ingestion time, which generic chunking pipelines do not perform.</p></blockquote>
+      <h2>Property 4: Semantic Precision</h2>
+      <p>Legal language is precise by design. "Reasonable" and "reasonably practicable" are different standards with different legal consequences. "Shall" and "may" have distinct legal meanings that courts examine closely. "Including" may or may not be exhaustive depending on context and jurisdiction.</p>
+      <p>Vector embeddings are trained to identify semantic similarity, which collapses many of these distinctions. A search for cases interpreting "reasonable" will surface cases about "reasonably practicable" because the words are semantically close. For many domains, that is the right behaviour. For legal research, it can produce wrong answers.</p>
+      <p>This does not mean vector search is useless for legal text. It means it needs to be combined with structured querying capabilities — the ability to search by defined legal concepts, statutory references, case citations, and specific terms of art — rather than replacing them.</p>
+      <h2>What a Better Architecture Looks Like</h2>
+      <p>A legal search system built for these properties would combine several things that generic RAG does not.</p>
+      <p><strong>Structured source metadata.</strong> Every document in the corpus should have machine-readable jurisdiction, authority level, effective date, and subject matter classification. This is editorial work, but it is load-bearing.</p>
+      <p><strong>Authority-weighted retrieval.</strong> Retrieved chunks should be ranked not just by semantic similarity but by the authority level of the source. Binding precedent should surface above persuasive authority; primary sources above commentary.</p>
+      <p><strong>Temporal filtering.</strong> The system should support both current-state queries and point-in-time queries, with the ability to filter the corpus to documents effective on a given date.</p>
+      <p><strong>Citation graph awareness.</strong> Legal documents cite each other. A judgment that is overruled by a later case should not be returned as good law. This requires maintaining a citation graph and checking overruling status at query time — something no generic RAG pipeline does.</p>
+      <h2>Why This Has Not Been Built at Scale</h2>
+      <p>The honest answer is that it is expensive. Building the structured metadata layer alone requires significant editorial investment for each jurisdiction covered. Maintaining a citation graph requires ongoing updates as new cases are decided. The resulting system is defensible but narrow — a deep legal research tool for a specific jurisdiction rather than a general search product.</p>
+      <p>Most legal AI products have made the opposite trade-off: broad coverage, lower precision, and a disclaimer that the output requires expert review. That is a legitimate product decision. But it means the tools currently marketed as "AI legal research" are mostly useful for drafting assistance and initial orientation, not for the precision work that legal research actually requires.</p>
+      <p>The gap between what these tools claim to do and what they actually do is a reliability problem. Building tools that are honest about their limitations — and architecturally designed to minimise the failure modes specific to legal reasoning — is harder, but it is the right target.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
+    <div class="article-content" id="article-article-22" style="display:none" data-cat="Data Law · GDPR" data-title="Filing Article 22 Requests: What Actually Happens When You Send One" data-meta="June 2024 · 8 min read">
+      <p>After filing GDPR Article 22 requests against several law firms and a recruiter, here is a frank account of what the responses look like and what they reveal about the state of compliance.</p>
+      <hr>
+      <h2>Why I Filed the Requests</h2>
+      <p>I applied to a number of UK law firms and a legal recruiter over a six-month period. In several cases, I received rejections within minutes of submitting my application — faster than any human could have reviewed a CV. In one case, I received a rejection before the application deadline had closed.</p>
+      <p>This is consistent with automated screening. An ATS scores the application against pre-set criteria — keyword matching, institution filters, experience thresholds — and rejects below-threshold applications without human review.</p>
+      <p>My question was simple: was this Article 22-compliant processing? I decided to find out by exercising the right directly.</p>
+      <h2>What Article 22 Requests Actually Say</h2>
+      <p>An Article 22 request is not a magic phrase. It is a communication asserting that automated decision-making may have occurred in relation to your data, requesting confirmation of whether this is the case, and — where it is — invoking your right to obtain human review, express your point of view, and contest the decision.</p>
+      <p>The request I sent was brief. It identified the specific application, noted the speed of rejection, asked for confirmation of whether automated processing was used, asked for disclosure of the logic involved, and formally requested human reconsideration of the application if automated processing had occurred.</p>
+      <h2>The Responses — Categorised</h2>
+      <p>Over eight requests filed, I received six substantive responses and two non-responses. The six substantive responses fell into three categories.</p>
+      <p><strong>Denial without engagement (three responses).</strong> These acknowledged receipt and stated that the firm's recruitment process involved human review at all stages and therefore Article 22 did not apply. No detail was provided on what that human review consisted of, when it occurred, or how the decision on my application was made. One response made the specific claim that automated tools were only used to "assist" recruiters, not to make decisions.</p>
+      <p><strong>Acknowledgment of automated processing, no meaningful remedy (two responses).</strong> These acknowledged that the ATS used automated scoring but claimed a recruiter had reviewed the output before the rejection was communicated. No evidence was provided for this. Neither firm offered reconsideration. One provided a brief description of the scoring criteria; the other did not.</p>
+      <p><strong>Genuine engagement (one response).</strong> One firm's Data Protection Officer responded in detail. They confirmed automated scoring had been used, explained the criteria, acknowledged that the rejection had been generated automatically, and offered to have a recruiter review the application manually. They also noted they were reviewing their process in light of the request. This was the response Article 22 was designed to produce.</p>
+      <h2>What the Responses Reveal</h2>
+      <p>The denial responses raise more questions than they answer. If a human reviewed every application before rejection, that review happened within minutes of submission. That is either implausibly fast or it means the "review" consisted of seeing an automated score and clicking confirm — which is not meaningful human oversight under the ICO's guidance.</p>
+      <p>The acknowledgment-without-remedy responses are the most interesting legally. If a firm acknowledges automated processing occurred, and the processing had a significant effect (rejection from employment), Article 22 requires them to provide a right to contest and obtain human review. Saying "yes, automated processing occurred" while refusing reconsideration is internally inconsistent.</p>
+      <blockquote><p>None of the firms that denied automated processing would have any particular incentive to admit it. Article 22 requests do not have discovery powers attached to them. A firm can claim human review occurred and there is no mechanism to verify the claim without regulatory investigation.</p></blockquote>
+      <h2>The ICO's Role</h2>
+      <p>I submitted a complaint to the ICO in relation to two of the non-engaging responses. The ICO assessed both complaints and declined to investigate, citing resource prioritisation. This is consistent with the ICO's published approach of focusing enforcement resources on systemic issues rather than individual complaints.</p>
+      <p>The practical implication is that Article 22 rights in the recruitment context are largely self-enforcing. The right exists; the enforcement infrastructure does not match the scale of the violation. This will likely change as automated hiring tools become more sophisticated and more widespread.</p>
+      <h2>What This Means for Practitioners and Applicants</h2>
+      <p><strong>For practitioners advising clients on GDPR compliance:</strong> if your client uses ATS scoring in recruitment, conduct an honest audit of whether meaningful human review occurs before rejection decisions are communicated. If a recruiter reviews only shortlisted candidates, that is not meaningful review of rejection decisions. Update the privacy notice. Build a right-to-contest process that actually functions.</p>
+      <p><strong>For applicants:</strong> the right is worth exercising, even if the immediate outcome is limited. It creates a paper trail, puts the firm on notice, and in the best case produces the genuine reconsideration that Article 22 was designed to enable. Filing the request costs nothing.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
+    <div class="article-content" id="article-shipping-15" style="display:none" data-cat="Product · Indie Building" data-title="Shipping 15 Products in a Year While Working as a Lawyer" data-meta="February 2025 · 9 min read">
+      <p>The most common question I get is how. Here is an honest account of the stack, the time, the trade-offs, and the one decision that would have saved three months of wasted context-switching.</p>
+      <hr>
+      <h2>The Honest Version of the Numbers</h2>
+      <p>Fifteen products in a year sounds more impressive than it is. Several are simple single-page tools — a calculator, a static dashboard, a basic form handler. Four or five are meaningfully complex applications with real functionality. Two have paying users or are on track to. The rest exist, are deployed, and are at various stages of something between proof-of-concept and neglected MVP.</p>
+      <p>Shipping fifteen things is not the same as building fifteen good products. But it taught me more about product development than I learned in two years of reading about it, and it produced a portfolio that has opened conversations that nothing else would have.</p>
+      <h2>The Stack</h2>
+      <p>Everything runs on Vercel. The frontend is almost always Vite + React or Next.js, depending on whether I need SSR. Tailwind for styling — not because I think it is the best CSS approach, but because it is fast for solo building. Supabase for anything that needs a database and auth. The Anthropic and Groq APIs for AI features, with Groq as the default for latency-sensitive applications because the free tier is genuinely fast.</p>
+      <p>For domains: anything that needs to feel like a real product gets a custom domain via Vercel's interface. Everything else lives on <code>.vercel.app</code>.</p>
+      <p>This stack has one property that matters above all others for solo development: the feedback loop is fast. From idea to deployed URL is typically under two hours if the idea is simple. For more complex projects, I can have something testable in a day. That speed compounds — ideas that would have been abandoned under a slower build process get tested and either validated or killed quickly.</p>
+      <h2>Where the Time Actually Goes</h2>
+      <p>Legal work is not nine-to-five but it is not predictably scheduled either. The reality of building alongside a senior in-house role is that the building happens in carved-out pockets: early mornings, occasional evenings, weekends when nothing urgent is in flight.</p>
+      <p>Most products got between eight and twenty hours of focused time. The more complex ones — LexScope Atlas, SQEasy — got considerably more, but spread over months rather than concentrated sprints.</p>
+      <p>The time sink that catches solo builders is not the building. It is the decision-making. Every product requires hundreds of small decisions — what to include, what to cut, how to handle edge cases, whether to fix a bug now or ship and iterate. When you are the only person making those decisions, and you are also handling a complex contract redline at the same time, the context-switching cost is high.</p>
+      <h2>The Decision That Would Have Saved Three Months</h2>
+      <p>The biggest mistake was not deciding earlier what each product was <em>for</em>. Not what it did — what it was <em>for</em>. Who was the user, what was their problem, what would make them come back.</p>
+      <p>Several products I built were technically interesting and practically purposeless. I built them because the technical challenge appealed or because I had a vague sense there was a use case. None of them went anywhere. The time spent on them was not wasted in the sense that I learned things — but it was wasted in the sense that I could have spent it on the products that actually had legs.</p>
+      <p>The products that have found traction — LexScope, SQEasy, the GDPR tooling — all share one property: I built them because I had personally experienced the problem they solve. LexScope came from the frustration of spending forty minutes researching which regulations applied to a client's product profile. SQEasy came from my own SQE1 preparation. The GDPR tools came from my Article 22 research.</p>
+      <blockquote><p>Build from pain, not from interest. Interest sustains the first weekend. Pain sustains the product through the ugly months when you are fixing bugs nobody has thanked you for fixing.</p></blockquote>
+      <h2>What AI Changed</h2>
+      <p>The honest answer is: a lot. Claude and Cursor have compressed the implementation time for features that previously would have required either more experience than I had or more time than I could allocate. I can move faster through unfamiliar parts of a stack. I spend less time on boilerplate. I catch more bugs before they ship.</p>
+      <p>What AI has not changed: product judgment, user understanding, the quality of the ideas, and the grinding work of thinking through edge cases. Those are still the hard parts, and they are still slow.</p>
+      <p>The risk I am aware of is building things faster than I am learning from them. Speed is only an advantage if you are moving in the right direction. The projects where I slowed down and thought carefully about the product problem before building produced better outcomes than the ones where I started coding immediately.</p>
+      <h2>What I Would Tell Someone Starting This</h2>
+      <p>Pick one thing and make it genuinely good before starting the next one. I did not do this, and it shows in the portfolio — there are several products that are clearly 80% done, where twenty more hours would have transformed them from "functional demo" to "product someone would pay for."</p>
+      <p>Deploy everything publicly from day one. The discipline of having something live that people might stumble across changes how you build. You make different decisions when the code is public than when it is sitting in a private repository.</p>
+      <p>And if you are building legal tools: the legal knowledge is your competitive advantage. Most people building in this space are engineers who learned some law. You know the law, and you can learn enough engineering. That asymmetry is worth more than it looks.</p>
+      <p class="article-disclaimer"><em>This article represents personal views only and does not constitute legal advice.</em></p>
+    </div>
+
   </div>
 
   <footer>
@@ -1321,6 +1547,28 @@ function filterWriting(btn, cat) {
   document.querySelectorAll('.wf-item').forEach(i => {
     i.style.display = (cat === 'all' || (i.dataset.wcat || '').includes(cat)) ? '' : 'none';
   });
+}
+
+function showArticle(slug) {
+  var src = document.getElementById('article-' + slug);
+  if (!src) return;
+  document.querySelector('.wf-filters').style.display = 'none';
+  document.getElementById('writing-list').style.display = 'none';
+  document.getElementById('article-cat').textContent = src.dataset.cat;
+  document.getElementById('article-title').textContent = src.dataset.title;
+  document.getElementById('article-meta').textContent = src.dataset.meta;
+  var body = document.getElementById('article-body');
+  body.innerHTML = src.innerHTML;
+  document.getElementById('article-detail').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function backToWriting() {
+  document.getElementById('article-detail').style.display = 'none';
+  document.getElementById('article-body').innerHTML = '';
+  document.querySelector('.wf-filters').style.display = '';
+  document.getElementById('writing-list').style.display = '';
+  window.scrollTo(0, 0);
 }
 
 document.querySelectorAll('a[onclick]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
