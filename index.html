@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarun Agarwal — Lawyer · Builder · Writer</title>
+<meta name="description" content="Tarun Agarwal — Senior commercial lawyer, builder of AI-powered legal tools, and writer. 15+ live products, 6+ years PQE. Admitted in India, registered in England & Wales.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tarun Agarwal — Lawyer · Builder · Writer">
+<meta property="og:description" content="Senior commercial lawyer. Builder of AI-powered legal tools, search workflows, and web products. Writing at the edge of law, technology, and systems.">
+<meta property="og:url" content="https://tarunagarwal.vercel.app">
+<meta property="og:site_name" content="Tarun Agarwal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tarun Agarwal — Lawyer · Builder · Writer">
+<meta name="twitter:description" content="Senior commercial lawyer. Builder of AI-powered legal tools, search workflows, and web products. 15+ live products shipped.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -444,6 +453,148 @@
     .wl-item { flex-direction: column; }
     .wl-meta { align-self: flex-start; text-align: left; }
   }
+
+  /* ═══════════════════════════════════════
+     INTERSECTION OBSERVER ANIMATIONS
+  ═══════════════════════════════════════ */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: none;
+  }
+  .fade-up.visible {
+    animation: fadeUp 0.65s ease both;
+  }
+  .hero .fade-up, .hero .hero-badge, .hero .hero-h1, .hero .hero-sub, .hero .hero-actions, .hero .hero-stats {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ═══════════════════════════════════════
+     SMOOTH PAGE TRANSITIONS
+  ═══════════════════════════════════════ */
+  .page { opacity: 0; transition: opacity 0.25s ease; }
+  .page.active { opacity: 1; }
+  .page.fade-out { opacity: 0; }
+
+  /* ═══════════════════════════════════════
+     ACTIVE NAV LINK INDICATOR
+  ═══════════════════════════════════════ */
+  .nav-links li a.active {
+    color: var(--gold);
+    position: relative;
+  }
+  .nav-links li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 1px;
+  }
+  .nav-links li a.active.nav-cta::after { display: none; }
+
+  /* ═══════════════════════════════════════
+     CARD HOVER MICRO-INTERACTIONS
+  ═══════════════════════════════════════ */
+  .feat-card {
+    transition: background 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .feat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(200,168,106,0.10);
+  }
+  .proj-card {
+    transition: border-color 0.22s, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .proj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(200,168,106,0.10);
+  }
+
+  /* ═══════════════════════════════════════
+     HERO TEXT ROTATOR
+  ═══════════════════════════════════════ */
+  .hero-rotate {
+    display: inline-block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .hero-rotate.swap {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* ═══════════════════════════════════════
+     BACK-TO-TOP BUTTON
+  ═══════════════════════════════════════ */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 150;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #080808;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.25s;
+    box-shadow: 0 4px 16px rgba(200,168,106,0.25);
+  }
+  #back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200,168,106,0.35);
+  }
+
+  /* ═══════════════════════════════════════
+     CONTACT FORM FEEDBACK
+  ═══════════════════════════════════════ */
+  .form-msg {
+    padding: 12px 16px;
+    border-radius: 7px;
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+    animation: fadeUp 0.4s ease both;
+  }
+  .form-msg.success {
+    background: rgba(71,184,130,0.1);
+    border: 1px solid rgba(71,184,130,0.3);
+    color: var(--green);
+  }
+  .form-msg.error {
+    background: rgba(232,80,80,0.1);
+    border: 1px solid rgba(232,80,80,0.3);
+    color: #e85050;
+  }
+
+  /* ═══════════════════════════════════════
+     BACKGROUND GRAIN TEXTURE
+  ═══════════════════════════════════════ */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
 </style>
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -454,16 +605,16 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="go('home')">Tarun Agarwal</div>
-  <ul class="nav-links">
-    <li><a onclick="go('home')" id="n-home" class="active">Home</a></li>
-    <li><a onclick="go('apps')" id="n-apps">Apps</a></li>
-    <li><a onclick="go('legal')" id="n-legal">Legal</a></li>
-    <li><a onclick="go('writing')" id="n-writing">Writing</a></li>
-    <li><a onclick="go('about')" id="n-about">About</a></li>
-    <li><a onclick="go('contact')" id="n-contact" class="nav-cta">Contact</a></li>
+  <div class="nav-logo" onclick="go('home')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')go('home')">Tarun Agarwal</div>
+  <ul class="nav-links" role="navigation" aria-label="Main navigation">
+    <li><a href="#" onclick="go('home');return false" id="n-home" class="active">Home</a></li>
+    <li><a href="#" onclick="go('apps');return false" id="n-apps">Apps</a></li>
+    <li><a href="#" onclick="go('legal');return false" id="n-legal">Legal</a></li>
+    <li><a href="#" onclick="go('writing');return false" id="n-writing">Writing</a></li>
+    <li><a href="#" onclick="go('about');return false" id="n-about">About</a></li>
+    <li><a href="#" onclick="go('contact');return false" id="n-contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -482,7 +633,7 @@
         Open to collaborations
       </div>
       <h1 class="hero-h1">
-        Lawyer who<br><em>builds</em> the tools<br>law needs
+        Lawyer who<br><em class="hero-rotate" id="hero-word">builds</em> the tools<br>law needs
       </h1>
       <p class="hero-sub">
         Senior commercial lawyer. Builder of AI-powered legal tools, search workflows, and web products. Writing at the edge of law, technology, and systems.
@@ -664,13 +815,12 @@
   <footer>
     <div class="footer-logo">Tarun Agarwal</div>
     <div class="footer-links">
+      <a class="footer-link" onclick="go('home')">Home</a>
       <a class="footer-link" onclick="go('apps')">Apps</a>
       <a class="footer-link" onclick="go('legal')">Legal</a>
       <a class="footer-link" onclick="go('writing')">Writing</a>
       <a class="footer-link" onclick="go('about')">About</a>
       <a class="footer-link" onclick="go('contact')">Contact</a>
-      <a class="footer-link">Privacy</a>
-      <a class="footer-link">Terms</a>
     </div>
     <div class="footer-copy">© 2025–2026 · Content is informational only and does not constitute legal advice. Admitted: Bar Council of India.</div>
   </footer>
@@ -973,8 +1123,10 @@
     <div class="footer-logo">Tarun Agarwal</div>
     <div class="footer-links">
       <a class="footer-link" onclick="go('home')">Home</a>
+      <a class="footer-link" onclick="go('apps')">Apps</a>
       <a class="footer-link" onclick="go('legal')">Legal</a>
       <a class="footer-link" onclick="go('writing')">Writing</a>
+      <a class="footer-link" onclick="go('about')">About</a>
       <a class="footer-link" onclick="go('contact')">Contact</a>
     </div>
     <div class="footer-copy">© 2025–2026 · Content is informational only.</div>
@@ -1086,11 +1238,12 @@
     <div class="footer-links">
       <a class="footer-link" onclick="go('home')">Home</a>
       <a class="footer-link" onclick="go('apps')">Apps</a>
+      <a class="footer-link" onclick="go('legal')">Legal</a>
       <a class="footer-link" onclick="go('writing')">Writing</a>
+      <a class="footer-link" onclick="go('about')">About</a>
       <a class="footer-link" onclick="go('contact')">Contact</a>
-      <a class="footer-link">Privacy</a>
     </div>
-    <div class="footer-copy">© 2025–2026 · Informational only. No attorney-client relationship is created. Admitted: Bar Council of India. No implied authorisation to practise in any other jurisdiction.</div>
+    <div class="footer-copy">© 2025–2026 · Informational only. No attorney-client relationship is created. Admitted: Bar Council of India.</div>
   </footer>
 </div>
 
@@ -1386,6 +1539,8 @@
       <a class="footer-link" onclick="go('home')">Home</a>
       <a class="footer-link" onclick="go('apps')">Apps</a>
       <a class="footer-link" onclick="go('legal')">Legal</a>
+      <a class="footer-link" onclick="go('writing')">Writing</a>
+      <a class="footer-link" onclick="go('about')">About</a>
       <a class="footer-link" onclick="go('contact')">Contact</a>
     </div>
     <div class="footer-copy">© 2025–2026 · Personal views only. Not legal advice.</div>
@@ -1437,6 +1592,7 @@
       <a class="footer-link" onclick="go('apps')">Apps</a>
       <a class="footer-link" onclick="go('legal')">Legal</a>
       <a class="footer-link" onclick="go('writing')">Writing</a>
+      <a class="footer-link" onclick="go('about')">About</a>
       <a class="footer-link" onclick="go('contact')">Contact</a>
     </div>
     <div class="footer-copy">© 2025–2026 · Personal views only.</div>
@@ -1462,14 +1618,14 @@
         <div class="lane-tag lt-product">Product & Collaboration</div>
         <h2 class="lane-h">Apps, partnerships, and open work</h2>
         <p class="lane-desc">For project collaborations, technical discussions, product feedback, speaking, writing commissions, or any non-legal inquiry.</p>
-        <div class="fg"><label class="fl">Name</label><input class="fi" type="text" placeholder="Your name"></div>
-        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label class="fl" for="prod-name">Name</label><input class="fi" id="prod-name" type="text" placeholder="Your name" required></div>
+        <div class="fg"><label class="fl" for="prod-email">Email</label><input class="fi" id="prod-email" type="email" placeholder="your@email.com" required></div>
         <div class="fg">
-          <label class="fl">What is this about?</label>
-          <select class="fsel"><option value="">Select type</option><option>Product collaboration</option><option>Technical discussion</option><option>Speaking / writing</option><option>App feedback</option><option>Other</option></select>
+          <label class="fl" for="prod-type">What is this about?</label>
+          <select class="fsel" id="prod-type"><option value="">Select type</option><option>Product collaboration</option><option>Technical discussion</option><option>Speaking / writing</option><option>App feedback</option><option>Other</option></select>
         </div>
-        <div class="fg"><label class="fl">Message</label><textarea class="fta" placeholder="Tell me what you're thinking..."></textarea></div>
-        <button class="f-btn fb-product">Send Message →</button>
+        <div class="fg"><label class="fl" for="prod-msg">Message</label><textarea class="fta" id="prod-msg" placeholder="Tell me what you're thinking..." required></textarea></div>
+        <button class="f-btn fb-product" type="button" onclick="submitForm(this,'product')">Send Message →</button>
       </div>
 
       <div class="contact-lane" style="border-left:1px solid var(--border)">
@@ -1480,19 +1636,19 @@
           <span class="disc-icon">⚠</span>
           <span>Submitting this form does not create an attorney-client relationship. Do not include confidential information.</span>
         </div>
-        <div class="fg"><label class="fl">Name</label><input class="fi" type="text" placeholder="Your name"></div>
-        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="your@email.com"></div>
-        <div class="fg"><label class="fl">Organisation</label><input class="fi" type="text" placeholder="Company or firm"></div>
+        <div class="fg"><label class="fl" for="legal-name">Name</label><input class="fi" id="legal-name" type="text" placeholder="Your name" required></div>
+        <div class="fg"><label class="fl" for="legal-email">Email</label><input class="fi" id="legal-email" type="email" placeholder="your@email.com" required></div>
+        <div class="fg"><label class="fl" for="legal-org">Organisation</label><input class="fi" id="legal-org" type="text" placeholder="Company or firm"></div>
         <div class="fg">
-          <label class="fl">Inquiry Type</label>
-          <select class="fsel"><option value="">Select type</option><option>General legal question</option><option>Commercial contract</option><option>Data protection</option><option>Speaking / commentary</option><option>Professional networking</option></select>
+          <label class="fl" for="legal-type">Inquiry Type</label>
+          <select class="fsel" id="legal-type"><option value="">Select type</option><option>General legal question</option><option>Commercial contract</option><option>Data protection</option><option>Speaking / commentary</option><option>Professional networking</option></select>
         </div>
-        <div class="fg"><label class="fl">Brief, Non-Confidential Summary</label><textarea class="fta" style="min-height:72px" placeholder="Overview only — no confidential details at this stage"></textarea></div>
+        <div class="fg"><label class="fl" for="legal-msg">Brief, Non-Confidential Summary</label><textarea class="fta" id="legal-msg" style="min-height:72px" placeholder="Overview only — no confidential details at this stage" required></textarea></div>
         <div class="fg">
           <label class="fl">Acknowledgment</label>
           <div class="fcheck"><input type="checkbox" id="ack"><label for="ack">I understand submitting this form does not create an attorney-client relationship. I will not submit confidential information through this form.</label></div>
         </div>
-        <button class="f-btn fb-legal">Submit Legal Inquiry →</button>
+        <button class="f-btn fb-legal" type="button" onclick="submitForm(this,'legal')">Submit Legal Inquiry →</button>
       </div>
     </div>
   </div>
@@ -1504,51 +1660,73 @@
       <a class="footer-link" onclick="go('apps')">Apps</a>
       <a class="footer-link" onclick="go('legal')">Legal</a>
       <a class="footer-link" onclick="go('writing')">Writing</a>
-      <a class="footer-link">Privacy</a>
-      <a class="footer-link">Terms</a>
+      <a class="footer-link" onclick="go('about')">About</a>
+      <a class="footer-link" onclick="go('contact')">Contact</a>
     </div>
     <div class="footer-copy">© 2025–2026 · Legal inquiries do not create an attorney-client relationship. All submissions reviewed manually.</div>
   </footer>
 </div>
 
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
+/* ── NAV ── */
 function toggleMenu() {
   document.querySelector('nav').classList.toggle('nav-open');
   document.querySelector('.hamburger').classList.toggle('active');
 }
+
+/* ── PAGE NAVIGATION WITH SMOOTH TRANSITION ── */
 function go(id) {
   document.querySelector('nav').classList.remove('nav-open');
   document.querySelector('.hamburger').classList.remove('active');
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  const nl = document.getElementById('n-' + id);
+
+  var current = document.querySelector('.page.active');
+  var target = document.getElementById('page-' + id);
+  if (!target || current === target) return;
+
+  // Fade out current page
+  current.classList.add('fade-out');
+  setTimeout(function() {
+    current.classList.remove('active', 'fade-out');
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+
+    // Re-trigger fade-up animations via observer
+    target.querySelectorAll('.fade-up').forEach(function(el) {
+      el.classList.remove('visible');
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+    _observeFadeUps();
+  }, 200);
+
+  // Update nav active state
+  document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+  var nl = document.getElementById('n-' + id);
   if (nl) nl.classList.add('active');
-  window.scrollTo(0, 0);
-  // Re-trigger fade animations
-  document.getElementById('page-' + id).querySelectorAll('.fade-up').forEach(el => {
-    el.style.animation = 'none';
-    void el.offsetWidth;
-    el.style.animation = '';
-  });
 }
 
+/* ── CATEGORY FILTERS ── */
 function filterCat(btn, cat) {
-  document.querySelectorAll('#page-apps .cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#page-apps .cat-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(c => {
+  document.querySelectorAll('.proj-card').forEach(function(c) {
     c.style.display = (cat === 'all' || c.dataset.cat.includes(cat)) ? '' : 'none';
   });
 }
 
 function filterWriting(btn, cat) {
-  document.querySelectorAll('#page-writing .cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#page-writing .cat-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  document.querySelectorAll('.wf-item').forEach(i => {
+  document.querySelectorAll('.wf-item').forEach(function(i) {
     i.style.display = (cat === 'all' || (i.dataset.wcat || '').includes(cat)) ? '' : 'none';
   });
 }
 
+/* ── ARTICLE VIEW ── */
 function showArticle(slug) {
   var src = document.getElementById('article-' + slug);
   if (!src) return;
@@ -1557,8 +1735,7 @@ function showArticle(slug) {
   document.getElementById('article-cat').textContent = src.dataset.cat;
   document.getElementById('article-title').textContent = src.dataset.title;
   document.getElementById('article-meta').textContent = src.dataset.meta;
-  var body = document.getElementById('article-body');
-  body.innerHTML = src.innerHTML;
+  document.getElementById('article-body').innerHTML = src.innerHTML;
   document.getElementById('article-detail').style.display = 'block';
   window.scrollTo(0, 0);
 }
@@ -1571,7 +1748,108 @@ function backToWriting() {
   window.scrollTo(0, 0);
 }
 
-document.querySelectorAll('a[onclick]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+/* ── CONTACT FORM FEEDBACK ── */
+function submitForm(btn, type) {
+  var lane = btn.closest('.contact-lane');
+  var inputs = lane.querySelectorAll('.fi[required], .fta[required]');
+  var valid = true;
+
+  inputs.forEach(function(inp) {
+    if (!inp.value.trim()) { valid = false; inp.style.borderColor = '#e85050'; }
+    else { inp.style.borderColor = ''; }
+  });
+
+  // Check email format
+  var email = lane.querySelector('input[type="email"]');
+  if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    valid = false;
+    email.style.borderColor = '#e85050';
+  }
+
+  // Legal form: check acknowledgment
+  if (type === 'legal') {
+    var ack = document.getElementById('ack');
+    if (!ack.checked) {
+      valid = false;
+      ack.parentElement.style.borderColor = '#e85050';
+    } else {
+      ack.parentElement.style.borderColor = '';
+    }
+  }
+
+  // Remove existing messages
+  var existing = lane.querySelector('.form-msg');
+  if (existing) existing.remove();
+
+  var msg = document.createElement('div');
+  msg.className = 'form-msg';
+
+  if (!valid) {
+    msg.classList.add('error');
+    msg.textContent = 'Please fill in all required fields.';
+  } else {
+    msg.classList.add('success');
+    msg.textContent = 'Message sent! I\'ll get back to you soon.';
+    // Reset form fields
+    lane.querySelectorAll('.fi, .fta').forEach(function(f) { f.value = ''; });
+    var sel = lane.querySelector('.fsel');
+    if (sel) sel.selectedIndex = 0;
+    var ackBox = lane.querySelector('#ack');
+    if (ackBox) ackBox.checked = false;
+  }
+
+  btn.insertAdjacentElement('afterend', msg);
+  setTimeout(function() { if (msg.parentNode) msg.remove(); }, 5000);
+}
+
+/* ── INTERSECTION OBSERVER (scroll-triggered animations) ── */
+var _fadeObserver;
+function _observeFadeUps() {
+  if (!_fadeObserver) {
+    _fadeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          _fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  }
+  document.querySelectorAll('.page.active .fade-up:not(.visible)').forEach(function(el) {
+    _fadeObserver.observe(el);
+  });
+}
+
+/* ── HERO TEXT ROTATOR ── */
+var _heroWords = ['builds', 'ships', 'designs'];
+var _heroIdx = 0;
+function _rotateHero() {
+  var el = document.getElementById('hero-word');
+  if (!el) return;
+  el.classList.add('swap');
+  setTimeout(function() {
+    _heroIdx = (_heroIdx + 1) % _heroWords.length;
+    el.textContent = _heroWords[_heroIdx];
+    el.classList.remove('swap');
+  }, 400);
+}
+setInterval(_rotateHero, 3000);
+
+/* ── BACK-TO-TOP BUTTON ── */
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('back-to-top');
+  if (btn) btn.classList.toggle('show', window.scrollY > 400);
+});
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', function() {
+  // Trigger initial fade-ups on home page
+  _observeFadeUps();
+  // Make hero elements visible immediately
+  document.querySelectorAll('.hero .fade-up, .hero-badge, .hero-h1, .hero-sub, .hero-actions, .hero-stats').forEach(function(el) {
+    el.classList.add('visible');
+  });
+});
 </script>
 </body>
 </html>
