@@ -200,7 +200,7 @@
       msg.textContent = 'Please fix the errors above.';
     } else {
       msg.classList.add('info');
-      msg.innerHTML = 'Form submission is not yet connected. For now, please reach out via <a href="https://linktr.ee/tarunag10" target="_blank">Linktree</a>.';
+      msg.innerHTML = 'Form submission is not yet connected. For now, please reach out via <a href="https://www.linkedin.com/in/tarunagarwal10/" target="_blank">LinkedIn</a>, <a href="https://x.com/tarunag10" target="_blank">X / Twitter</a>, or <a href="https://linktr.ee/tarunag10" target="_blank">Linktree</a>.';
       // Reset form fields
       lane.querySelectorAll('.fi, .fta').forEach(function(f) { f.value = ''; });
       var sel = lane.querySelector('.fsel');
