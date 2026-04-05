@@ -261,7 +261,15 @@
       <p class="page-sub">15 products built and shipped. Built at the intersection of law, AI, automation, and developer tooling — every one from a real problem.</p>
     </div>
 
-    <div class="cat-filters fade-up d1" role="group" aria-label="Filter by category">
+    <div class="apps-search fade-up d1">
+      <label class="apps-search-label" for="apps-search-input">Search Apps</label>
+      <div class="apps-search-row">
+        <input id="apps-search-input" class="apps-search-input" type="search" placeholder="Search by app name..." autocomplete="off" aria-label="Search apps by name">
+        <button id="apps-search-clear" class="apps-search-clear" type="button">Clear</button>
+      </div>
+    </div>
+
+    <div class="cat-filters fade-up d2" role="group" aria-label="Filter by category">
       <button class="cat-btn active" data-filter="all">All</button>
       <button class="cat-btn" data-filter="legal">Legal Tech</button>
       <button class="cat-btn" data-filter="ai">AI Tools</button>

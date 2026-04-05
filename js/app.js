@@ -85,12 +85,55 @@
   }
 
   /* ── CATEGORY FILTERS ── */
+  var appFilterState = { cat: 'all', query: '' };
+
   function filterCat(btn, cat) {
     document.querySelectorAll('#page-apps .cat-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    document.querySelectorAll('.proj-card').forEach(function(c) {
-      c.style.display = (cat === 'all' || c.dataset.cat.includes(cat)) ? '' : 'none';
+    appFilterState.cat = cat;
+    applyAppFilters();
+  }
+
+  function applyAppFilters() {
+    var query = appFilterState.query;
+    document.querySelectorAll('#page-apps .proj-card').forEach(function(card) {
+      var cardCats = card.dataset.cat || '';
+      var categoryMatch = appFilterState.cat === 'all' || cardCats.includes(appFilterState.cat);
+      var titleEl = card.querySelector('.proj-title');
+      var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+      var queryMatch = !query || title.indexOf(query) !== -1;
+      card.style.display = (categoryMatch && queryMatch) ? '' : 'none';
     });
+  }
+
+  function syncAppSearchControls() {
+    var clearBtn = document.getElementById('apps-search-clear');
+    if (clearBtn) clearBtn.disabled = !appFilterState.query;
+  }
+
+  function bindAppSearch() {
+    var searchInput = document.getElementById('apps-search-input');
+    var clearBtn = document.getElementById('apps-search-clear');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function(e) {
+      appFilterState.query = (e.target.value || '').trim().toLowerCase();
+      applyAppFilters();
+      syncAppSearchControls();
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        if (!searchInput.value) return;
+        searchInput.value = '';
+        appFilterState.query = '';
+        applyAppFilters();
+        syncAppSearchControls();
+        searchInput.focus();
+      });
+    }
+
+    syncAppSearchControls();
   }
 
   function filterWriting(btn, cat) {
@@ -273,6 +316,8 @@
 
   /* ── INIT ── */
   document.addEventListener('DOMContentLoaded', function() {
+    bindAppSearch();
+    applyAppFilters();
     _observeFadeUps();
     // Make hero elements visible immediately
     document.querySelectorAll('.hero .fade-up, .hero-badge, .hero-h1, .hero-sub, .hero-actions, .hero-stats').forEach(function(el) {
