@@ -93,8 +93,8 @@
   <!-- FEATURED APPS -->
   <div class="wrap section">
     <div class="section-label">Selected Work</div>
-    <h2 class="section-h">Apps & Products</h2>
-    <p class="section-sub">Tools built from real practitioner problems, not theoretical use cases.</p>
+    <h2 class="section-h">Legal Apps & Products</h2>
+    <p class="section-sub">Legal, compliance, and regulated-workflow tools built from real practitioner problems.</p>
     <div class="featured-grid">
       <div class="feat-card" data-navigate="apps">
         <div class="feat-icon" style="background:var(--blue-dim)">⚖️</div>
@@ -119,19 +119,19 @@
         </div>
       </div>
       <div class="feat-card" data-navigate="apps">
-        <div class="feat-icon" style="background:var(--purple-dim)">✨</div>
-        <div class="feat-cat">AI Tools · Productivity</div>
-        <div class="feat-title">PromptForge</div>
-        <div class="feat-desc">Generate production-ready AI prompts in seconds. Customize tone, format, and length for any audience. Built for practitioners who work with LLMs daily.</div>
+        <div class="feat-icon" style="background:var(--green-dim)">✓</div>
+        <div class="feat-cat">RegTech · EU AI Act</div>
+        <div class="feat-title">Actlyra</div>
+        <div class="feat-desc">EU AI Act compliance workspace for system inventory, risk classification, evidence tracking, and export-ready governance records.</div>
         <div class="feat-stack">
-          <span class="pill pill-purple">Vite</span>
-          <span class="pill">React</span>
-          <span class="pill">AI</span>
+          <span class="pill pill-green">React</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Compliance</span>
         </div>
       </div>
     </div>
     <div style="text-align:center;margin-top:22px">
-      <button class="btn btn-ghost" data-navigate="apps">View all 16 projects →</button>
+      <button class="btn btn-ghost" data-navigate="apps">View legal apps →</button>
     </div>
   </div>
 
@@ -257,37 +257,32 @@
   <div class="wrap">
     <div class="page-header fade-up">
       <div class="section-label">Portfolio</div>
-      <h1 class="page-h">Apps & Labs</h1>
-      <p class="page-sub">15 products built and shipped. Built at the intersection of law, AI, automation, and developer tooling — every one from a real problem.</p>
+      <h1 class="page-h">Legal Apps</h1>
+      <p class="page-sub">A focused set of legal, compliance, regulated-workflow, and legal-finance products. Broader coding experiments now live separately on Code Counsel.</p>
     </div>
 
     <div class="apps-search fade-up d1">
       <label class="apps-search-label" for="apps-search-input">Search Apps</label>
       <div class="apps-search-row">
-        <input id="apps-search-input" class="apps-search-input" type="search" placeholder="Search by app name..." autocomplete="off" aria-label="Search apps by name">
+        <input id="apps-search-input" class="apps-search-input" type="search" placeholder="Search legal apps..." autocomplete="off" aria-label="Search legal apps by name">
         <button id="apps-search-clear" class="apps-search-clear" type="button">Clear</button>
       </div>
     </div>
 
     <div class="cat-filters fade-up d2" role="group" aria-label="Filter by category">
       <button class="cat-btn active" data-filter="all">All</button>
-      <button class="cat-btn" data-filter="legal">Legal Tech</button>
-      <button class="cat-btn" data-filter="ai">AI Tools</button>
-      <button class="cat-btn" data-filter="finance">Finance</button>
-      <button class="cat-btn" data-filter="edtech">EdTech</button>
-      <button class="cat-btn" data-filter="productivity">Productivity</button>
-      <button class="cat-btn" data-filter="lifestyle">Lifestyle</button>
-      <button class="cat-btn" data-filter="extension">Extensions</button>
-      <button class="cat-btn" data-filter="devtools">Dev Tools</button>
+      <button class="cat-btn" data-filter="regtech">RegTech</button>
+      <button class="cat-btn" data-filter="legal-ops">Legal Ops</button>
+      <button class="cat-btn" data-filter="legal-ed">Legal Ed</button>
+      <button class="cat-btn" data-filter="legal-finance">Legal Finance</button>
+      <button class="cat-btn" data-filter="privacy">Privacy</button>
     </div>
 
     <div class="projects-grid" id="projects-grid">
 
       <!-- LEXSCOPE ATLAS -->
-      <div class="proj-card" data-cat="legal">
-        <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
-          <iframe src="https://www.youtube.com/embed/Dv6nj4IdJWs" title="LexScope Atlas Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
+      <div class="proj-card" data-cat="legal regtech">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/lexscope-atlas.jpg" alt="LexScope Atlas app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">LexScope Atlas</div>
@@ -302,15 +297,28 @@
         </div>
       </div>
 
-      <!-- SQEASY -->
-      <div class="proj-card" data-cat="edtech legal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1220,#111827)">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 35% 55%,rgba(200,168,106,0.14),transparent 60%)"></div>
-          <div class="proj-thumb-inner">🃏</div>
-        </div>
+      <!-- ACTLYRA -->
+      <div class="proj-card" data-cat="legal regtech">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/actlyra.jpg" alt="Actlyra app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
-          <div class="proj-title">SQEasy (Coming Soon)</div>
+          <div class="proj-title">Actlyra</div>
+          <div class="proj-desc">EU AI Act compliance workspace that helps teams move from AI system inventory to risk classification, evidence tracking, conformity tasks, and export-ready governance records.</div>
+          <div class="proj-stack">
+            <span class="pill pill-green">React</span><span class="pill">TypeScript</span><span class="pill">EU AI Act</span><span class="pill">Compliance</span>
+          </div>
+          <div class="proj-links">
+            <a class="proj-link primary" href="https://actlyra.vercel.app" target="_blank">Live App →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SQEASY -->
+      <div class="proj-card" data-cat="legal legal-ed">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/sqeasy.jpg" alt="SQEasy app thumbnail" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
+          <div class="proj-title">SQEasy</div>
           <div class="proj-desc">The smartest way to pass SQE1. AI-powered flashcards with SM-2 spaced repetition science, 400+ curated MCQs modelled on the actual SQE1 format, 14 FLK subject areas, timed mock exams, cohort percentile, real-time analytics, streak tracking, and gamification.</div>
           <div class="proj-stack">
             <span class="pill pill-gold">Next.js</span><span class="pill">AI-Powered</span><span class="pill">SM-2</span><span class="pill">Freemium</span>
@@ -322,11 +330,8 @@
       </div>
 
       <!-- LEGALMERGE -->
-      <div class="proj-card" data-cat="legal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a0e14,#0d1520)">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(71,184,130,0.12),transparent 60%)"></div>
-          <div class="proj-thumb-inner">📋</div>
-        </div>
+      <div class="proj-card" data-cat="legal legal-ops">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/legalmerge.jpg" alt="LegalMerge app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">LegalMerge</div>
@@ -341,11 +346,8 @@
       </div>
 
       <!-- TIMEBAR -->
-      <div class="proj-card" data-cat="legal">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a0a14,#0f1420)">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 40% 50%,rgba(220,180,100,0.12),transparent 55%)"></div>
-          <div class="proj-thumb-inner">⏳</div>
-        </div>
+      <div class="proj-card" data-cat="legal legal-ops">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/timebar.jpg" alt="TimeBar app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">TimeBar</div>
@@ -360,7 +362,7 @@
       </div>
 
       <!-- PROMPTFORGE -->
-      <div class="proj-card" data-cat="ai productivity">
+      <div class="proj-card" data-cat="ai productivity" hidden>
         <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
           <iframe src="https://www.youtube.com/embed/SpxjQ9k7sZY" title="PromptForge Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -379,7 +381,7 @@
       </div>
 
       <!-- REPURPOSE AI -->
-      <div class="proj-card" data-cat="ai productivity">
+      <div class="proj-card" data-cat="ai productivity" hidden>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0a0f18,#101828)">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 65% 35%,rgba(79,142,255,0.13),transparent 60%)"></div>
           <div class="proj-thumb-inner">♻️</div>
@@ -398,11 +400,8 @@
       </div>
 
       <!-- DOCBEAM -->
-      <div class="proj-card" data-cat="legal productivity">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0a10,#140f1c)">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(155,109,255,0.12),transparent 55%)"></div>
-          <div class="proj-thumb-inner">📡</div>
-        </div>
+      <div class="proj-card" data-cat="legal legal-ops">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/docbeam.jpg" alt="DocBeam app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">DocBeam</div>
@@ -417,7 +416,7 @@
       </div>
 
       <!-- TASK ATOMISER -->
-      <div class="proj-card" data-cat="ai productivity">
+      <div class="proj-card" data-cat="ai productivity" hidden>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1209,#0e180c)">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 45% 55%,rgba(71,184,130,0.13),transparent 55%)"></div>
           <div class="proj-thumb-inner">⚛️</div>
@@ -436,7 +435,7 @@
       </div>
 
       <!-- THOUGHT EXPERIMENTS -->
-      <div class="proj-card" data-cat="ai productivity">
+      <div class="proj-card" data-cat="ai productivity" hidden>
         <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
           <iframe src="https://www.youtube.com/embed/alEkXP6qXdk" title="Thought Experiments Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -455,10 +454,8 @@
       </div>
 
       <!-- SALARY SACRIFICE CALCULATOR UK -->
-      <div class="proj-card" data-cat="finance legal">
-        <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
-          <iframe src="https://www.youtube.com/embed/tjPiOOJsQts" title="Salary Sacrifice Calculator UK Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
+      <div class="proj-card" data-cat="legal legal-finance">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/salary-sacrifice-uk.jpg" alt="Salary Sacrifice Calculator UK app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">Salary Sacrifice Calculator UK</div>
@@ -474,10 +471,8 @@
       </div>
 
       <!-- GDPR REQUEST HANDLER -->
-      <div class="proj-card" data-cat="legal">
-        <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
-          <iframe src="https://www.youtube.com/embed/wUpqaEifPwY" title="GDPR Request Handler Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
+      <div class="proj-card" data-cat="legal privacy regtech">
+        <div class="proj-thumb proj-thumb--image"><img src="assets/thumbnails/gdpr-request-handler.jpg" alt="GDPR Request Handler app thumbnail" loading="lazy"></div>
         <div class="proj-body">
           <div class="proj-status s-live"><span class="proj-status-dot"></span>Live</div>
           <div class="proj-title">GDPR Request Handler</div>
@@ -492,8 +487,23 @@
         </div>
       </div>
 
+      <!-- CODE COUNSEL BRIDGE -->
+      <div class="proj-card proj-card--bridge" data-cat="all">
+        <div class="proj-body">
+          <div class="proj-status s-dev"><span class="proj-status-dot"></span>Separate Portfolio</div>
+          <div class="proj-title">More Apps on Code Counsel</div>
+          <div class="proj-desc">The broader app portfolio now has its own home: Apple apps, accessibility tools, developer utilities, AI productivity experiments, finance tools, health apps, browser extensions, and local-first software builds.</div>
+          <div class="proj-stack">
+            <span class="pill pill-blue">Developer Portfolio</span><span class="pill">Apps</span><span class="pill">Experiments</span>
+          </div>
+          <div class="proj-links">
+            <a class="proj-link primary" href="https://code-counsel.vercel.app" target="_blank" rel="noreferrer">Visit Code Counsel →</a>
+          </div>
+        </div>
+      </div>
+
       <!-- PERSONAL FINANCE DASHBOARD -->
-      <div class="proj-card" data-cat="finance">
+      <div class="proj-card" data-cat="finance" hidden>
         <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
           <iframe src="https://www.youtube.com/embed/-XD15Nu6gE4" title="Pulse Board - Personal-Finance-Dashboard Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -512,7 +522,7 @@
       </div>
 
       <!-- GREEN ACTION PLAN -->
-      <div class="proj-card" data-cat="lifestyle productivity">
+      <div class="proj-card" data-cat="lifestyle productivity" hidden>
         <div class="proj-thumb proj-thumb--video" style="background:#0a0a0a">
           <iframe src="https://www.youtube.com/embed/bHiTzhU6dfk" title="GreenPlan Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -531,7 +541,7 @@
       </div>
 
       <!-- CLARITYONE -->
-      <div class="proj-card" data-cat="extension productivity">
+      <div class="proj-card" data-cat="extension productivity" hidden>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0a0e14,#101828)">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 45% 50%,rgba(79,142,255,0.14),transparent 60%)"></div>
           <div class="proj-thumb-inner">♿</div>
@@ -550,7 +560,7 @@
       </div>
 
       <!-- SNAPCRAWL -->
-      <div class="proj-card" data-cat="devtools productivity">
+      <div class="proj-card" data-cat="devtools productivity" hidden>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#070d14,#0a1a14)">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(71,184,130,0.14),transparent 60%)"></div>
           <div class="proj-thumb-inner">📸</div>
@@ -569,7 +579,7 @@
       </div>
 
       <!-- GHOSTKEY -->
-      <div class="proj-card" data-cat="extension productivity">
+      <div class="proj-card" data-cat="extension productivity" hidden>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0a10,#140f1c)">
           <div style="position:absolute;inset:0;background:radial-gradient(circle at 55% 45%,rgba(155,109,255,0.14),transparent 60%)"></div>
           <div class="proj-thumb-inner">👻</div>
