@@ -250,7 +250,7 @@ nav {
   border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
 }
 .feat-card {
-  background: var(--bg-2); padding: 32px 28px;
+  background: var(--bg-2); padding: 0;
   cursor: pointer; transition: background 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
   display: flex; flex-direction: column;
 }
@@ -264,10 +264,72 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-size: 18px; margin-bottom: 18px; flex-shrink: 0;
 }
+.feat-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-3);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.feat-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.feat-card:hover .feat-thumb img { transform: scale(1.035); }
+.feat-card .feat-cat,
+.feat-card .feat-title,
+.feat-card .feat-desc,
+.feat-card .feat-stack { margin-left: 28px; margin-right: 28px; }
+.feat-card .feat-cat { margin-top: 24px; }
+.feat-card .feat-stack { margin-bottom: 28px; }
 .feat-cat { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
 .feat-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--text); margin-bottom: 9px; }
 .feat-desc { font-size: 14px; color: var(--text-2); line-height: 1.72; flex: 1; margin-bottom: 18px; }
 .feat-stack { display: flex; gap: 5px; flex-wrap: wrap; }
+.lab-bridge {
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  margin-top: 14px;
+  padding: 14px 18px 14px 14px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.lab-bridge:hover {
+  border-color: rgba(200,168,106,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(200,168,106,0.10);
+}
+.lab-bridge-thumb {
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-3);
+}
+.lab-bridge-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.lab-bridge-copy .feat-title { margin-bottom: 6px; }
+.lab-bridge-copy .feat-desc { margin-bottom: 0; max-width: 620px; }
+.lab-bridge-action {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cat-link { text-decoration: none; display: inline-flex; align-items: center; }
 
 /* ═══════════════════════════════════════
    HOME — LEGAL SNAPSHOT
@@ -567,6 +629,8 @@ footer { border-top: 1px solid var(--border); padding: 36px 36px 28px; display: 
   .nav-links li a { padding: 14px 24px; width: 100%; display: block; font-size: 1rem; }
   .hamburger { display: flex; }
   .featured-grid, .focus-grid, .legal-snap { grid-template-columns: 1fr; }
+  .lab-bridge { grid-template-columns: 1fr; gap: 16px; padding: 14px; }
+  .lab-bridge-action { white-space: normal; }
   .legal-layout, .about-layout { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .areas-grid { grid-template-columns: 1fr; }
