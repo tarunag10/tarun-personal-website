@@ -146,6 +146,76 @@
 
   <div class="divider"></div>
 
+  <!-- MOTION GRAPHICS -->
+  <div class="wrap section motion-section">
+    <div class="motion-copy">
+      <div class="section-label">Motion Systems</div>
+      <h2 class="section-h">Animated product signals</h2>
+      <p class="section-sub">A motion-led snapshot of the portfolio: legal workflows, builder cadence, and practical output rendered as graphics rather than a static brag sheet.</p>
+    </div>
+    <div class="motion-stage" data-motion-stage aria-label="Animated portfolio metrics and product workflow graphic" role="img">
+      <div class="motion-panel motion-panel--system">
+        <div class="motion-panel-head">
+          <span>Legal product engine</span>
+          <span data-motion-frame>F000</span>
+        </div>
+        <svg class="motion-flow" viewBox="0 0 640 330" aria-hidden="true">
+          <defs>
+            <linearGradient id="motion-line" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="#c8a86a"/>
+              <stop offset="55%" stop-color="#4f8eff"/>
+              <stop offset="100%" stop-color="#47b882"/>
+            </linearGradient>
+          </defs>
+          <path class="motion-grid-line" d="M42 74 H598 M42 150 H598 M42 226 H598 M106 34 V292 M248 34 V292 M390 34 V292 M532 34 V292"/>
+          <path class="motion-path" data-motion-path d="M68 242 C142 142 196 138 266 188 C338 242 392 74 472 112 C526 138 554 98 590 72"/>
+          <g class="motion-node" data-motion-node="0" transform="translate(68 242)">
+            <circle r="22"></circle><text y="5">Brief</text>
+          </g>
+          <g class="motion-node" data-motion-node="1" transform="translate(266 188)">
+            <circle r="22"></circle><text y="5">Rules</text>
+          </g>
+          <g class="motion-node" data-motion-node="2" transform="translate(472 112)">
+            <circle r="22"></circle><text y="5">Ship</text>
+          </g>
+          <g class="motion-marker" data-motion-marker>
+            <circle r="8"></circle>
+          </g>
+        </svg>
+      </div>
+      <div class="motion-panel motion-panel--metrics">
+        <div class="motion-kpis">
+          <div>
+            <span class="motion-kpi-value"><span data-motion-counter data-target="16">0</span>+</span>
+            <span class="motion-kpi-label">Live products</span>
+          </div>
+          <div>
+            <span class="motion-kpi-value"><span data-motion-counter data-target="6">0</span>+</span>
+            <span class="motion-kpi-label">Years PQE</span>
+          </div>
+          <div>
+            <span class="motion-kpi-value"><span data-motion-counter data-target="2">0</span></span>
+            <span class="motion-kpi-label">Jurisdictions</span>
+          </div>
+        </div>
+        <div class="motion-bars" aria-hidden="true">
+          <div class="motion-bar"><span style="--target:82%"></span><em>Legal tech</em></div>
+          <div class="motion-bar"><span style="--target:68%"></span><em>Developer tools</em></div>
+          <div class="motion-bar"><span style="--target:74%"></span><em>Compliance</em></div>
+          <div class="motion-bar"><span style="--target:56%"></span><em>Writing</em></div>
+        </div>
+        <div class="motion-timeline" aria-hidden="true">
+          <span data-motion-tick="0"></span>
+          <span data-motion-tick="1"></span>
+          <span data-motion-tick="2"></span>
+          <span data-motion-tick="3"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- LEGAL SNAPSHOT -->
   <div class="wrap section">
     <div class="section-label">Legal Profile</div>
@@ -1173,6 +1243,7 @@
 <button id="back-to-top" aria-label="Scroll to top" data-action="scroll-top">↑</button>
 
 <script src="js/router.js"></script>
+<script src="js/motion-graphics.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
